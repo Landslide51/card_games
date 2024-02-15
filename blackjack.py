@@ -2,9 +2,13 @@ import random
 from time import sleep
 
 print("Поиграем в очко?))")
-
-number_of_players = input("Сколько человек будет играть?\n")
-number_of_players = int(number_of_players)
+while True:
+    try:
+        number_of_players = input("Сколько человек будет играть?\n")
+        number_of_players = int(number_of_players)
+        break
+    except ValueError:
+        print("Введите цифру не больше 6 игроков")
 if number_of_players > 6:
     print("Вы ввели количество игроков превышающее возможное(max6)")
     exit()
